@@ -94,7 +94,30 @@ costServ.forEach((each) => {
 
 // 7. Print department having highest total bill collection
 
-console.log(highPat["dept"]);
+patients.forEach((eachPat)=>{
+   
+  let deptName=eachPat.dept;
+  let bills=eachPat.bills;
+  total=bills.reduce((acc,curr)=>acc + curr["amount"],0);
+  if(deptName in output){
+    output[deptName]=output[deptName]+total;
+  }else{
+    output[deptName]=total;
+  }
+});
+let output=Object.entries(out);
+let highDept="";
+let highAmount="";
+
+for(let i=0;i<=outputArray.length-1;i++){
+  for(let j=1;j<=outputArray.length-1;j++){
+    if(outputArray[i][j]>outputArray[j][1]){
+      highDept=outputArray[i][0];
+      highAmount=outputArray[i][1];
+    }
+  }
+}
+console.log(highAmount,highDept);
 
 
 // 8. Print patient who had an 'MRI'
