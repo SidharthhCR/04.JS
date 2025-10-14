@@ -135,4 +135,4 @@ console.log(allTesters)
 empRating=flattendEmp.toSorted((a,b)=>a.rating-b.rating)
 empRating.forEach((eachEmp)=>console.log(eachEmp.empName,eachEmp.rating));
 // 20️⃣ Print manager name with the project that has the largest team size. (use reduce)
-let managerName=projects.reduce((acc,curr)=>acc)
+let managerName=projects.reduce((acc,curr)=>acc.team.length + curr.team.length ?acc:curr)
