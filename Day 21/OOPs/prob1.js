@@ -8,5 +8,6 @@ class person{
         console.log(`Name:${this.name},Weight:${this.weight}`)
     }
 }
+
 let p1=new person();
 p1.printDetails();
