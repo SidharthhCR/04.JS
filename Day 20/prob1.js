@@ -77,7 +77,16 @@ let flattendEmp=totalEmp.flat(Infinity);
 
 
 // 7️⃣ Print all unique roles (Developer, Tester, Designer, etc.) across projects. (use map + flat + new Set)
-
+let obj = {};
+flatEmp.forEach((eachPro) => {
+  let rol = eachPro["role"];
+  if (rol in obj) {
+    obj[rol] = 1;
+  } else {
+    obj[rol] += 1;
+  }
+});
+console.log(obj);
 
 // 8️⃣ Print names of employees whose rating > 4.5. (use map + flat + filter)
 let empRating=flattendEmp.filter((eachPro)=>eachPro["rating"] > 4.5)
@@ -117,7 +126,15 @@ let newProject=projects.map((eachPro)=>{
 //console.log(newProject)
 
 // 15️⃣ Print the project that has the highest total team hours. (nested reduce logic)
-
+let big = 0;
+let highTotal = projects.reduce(
+  (high, acc) =>
+    (high = acc["team"].reduce((acc1, curr) => acc1 + curr["hours"], 0))
+  // if(high>big){
+  //   big=high;
+  // }
+);
+console.log(highTotal);
 
 // 16️⃣ Create a new array of all employee names (flat list). (use map + flat + map)
 let newArray=flattendEmp.map((eachEmp)=>eachEmp.empName)
@@ -135,6 +152,10 @@ allTesters=flattendEmp.filter((eachEmp)=>eachEmp.role=="Tester")
 empRating=flattendEmp.toSorted((a,b)=>a.rating-b.rating)
 empRating.forEach((eachEmp)=>console.log(eachEmp.empName,eachEmp.rating));
 // 20️⃣ Print manager name with the project that has the largest team size. (use reduce)
-let managerName=projects.reduce((acc,curr)=>acc.team.length + curr.team.length ?acc:curr)
-projects.filter((eachPro)=>eachPro.manager)
-console.log(managerName)
+// 
+
+let teamSize = projects.reduce((a, b) =>
+  b["team"].length > a["team"].length ? b : a
+);
+console.log(teamSize["manager"]);
+
