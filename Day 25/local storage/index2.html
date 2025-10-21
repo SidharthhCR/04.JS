@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Welcome</h1>
+        <h2 id="dname">Suiii</h2>
+        <h2 id="ditem">girrr</h2>
+        <button onclick="deleteItems()">Save</button>
+    </body>
+    <script>
+        let details=localStorage.getItem('userDetails');
+        let objDetails=JSON.parse(details);
+        console.log(objDetails)
+
+        dname.innerHTML=objDetails.iname;
+        ditem.innerHTML=objDetails.iemail;
+
+        const deleteItems= () =>{
+            localStorage.removeItem("userDetails")
+            window.location="./index.html"
+        }
+    </script>
+    </html>
+    
+</body>
+
+</html>
