@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <h1>TODO</h1>
+    <table  class="table">
+        <thead>
+            <tr>
+                <th scope="col">userId</th>
+                <th scope="col">id</th>
+                <th scope="col">title</th>
+                <th scope="col">completed</th>
+            </tr>
+        </thead>
+        <tbody id="result">
+
+        </tbody>
+    </table>
+
+</body>
+<script>
+    let xObj = new XMLHttpRequest()
+    xObj.open('get', 'https://jsonplaceholder.typicode.com/todos')
+    xObj.send()
+    xObj.onreadystatechange = () => {
+        if (xObj.readyState == 4 && xObj.status == 200) {
+            let apiResponse = xObj.response;
+            apiResponse = JSON.parse(apiResponse)
+            console.log(apiResponse)
+        
+
+        apiResponse.map((eachTodo) => (
+            result.innerHTML += `<tr>
+      <th scope="row">${eachTodo.userId}</th>
+      <td>${eachTodo.id}</td>
+      <td>${eachTodo.title}</td>
+      <td>${eachTodo.completed}</td>
+    </tr>
+    `
+        )
+ ) }  }
+</script>
+
+</html>
