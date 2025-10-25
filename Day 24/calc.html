@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./calc.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1 class="mt-5" style="text-align:center;color: white">Calculator</h1>
+    <div class="calc-body mt-5">
+        <div class="calc-screen">
+            <div id="calc-typed">
+                <input type="text" placeholder="0" id="result" class="form-control">
+            </div>
+        </div>
+        <div class="calc-button-row">
+            <button onclick="displayData('7')">7</button>
+            <button onclick="displayData('8')">8</button>
+            <button onclick="displayData('9')">9</button>
+            <button onclick="displayData('*')">X</button>
+            <button onclick="displayData('4')">4</button>       
+            <button onclick="displayData('5')">5</button>
+            <button onclick="displayData('6')">6</button>
+            <button onclick="displayData('-')">-</button>
+             <button onclick="displayData('1')">1</button>
+            <button onclick="displayData('2')">2</button>
+            <button onclick="displayData('3')">3</button>
+             <button onclick="displayData('+')">+</button>
+             <button onclick="clearAll()"                                                                                                                                                    v>AC</button>
+             <button onclick="displayData(0)">0</button>
+             <button onclick="calculate()">=</button>
+             <button onclick="deleteAll()">←</button>
+
+
+</body>
+
+</html>

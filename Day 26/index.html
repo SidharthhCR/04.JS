@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>AJAX</h1>
+    <div id="suii" class="row">
+       
+    </div>
+</body>
+<script>
+    let xmlObj = new XMLHttpRequest()
+    //created a new xmlHTTPSrequestObgj -0
+    xmlObj.open('get', 'https://dummyjson.com/products')
+    //giving config to the xmlHTTPSRequestObj -1
+    xmlObj.send()
+    //sending the request-2
+
+    //sending recives the response-3
+
+    //client recives the response -4
+
+    //ready state
+    xmlObj.onreadystatechange = () => {
+        if (xmlObj.readyState == 4 && xmlObj.status == 200) {
+            let apiResponse = xmlObj.response;
+            apiResponse = JSON.parse(apiResponse);//to convert JSON into object
+
+            let data = apiResponse.products;
+            console.log(data)
+            data.map((eachData)=>{
+                suii.innerHTML +=` <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src=${eachData.thumbnail} class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${eachData.title}</h5>
+                    <p class="card-text">${eachData.warrantyInformation}
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>`
+            })
+        }
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student form</title>
+    <link rel="stylesheet" href="index3.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <section>
+        <div id="main" class="d-flex justify-content-center align-items-center flex-column m-5 ">
+            <div class=" mb-3" style="width: 400px;">
+                <input id="name1" type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Name">
+            </div>
+
+            <div class=" mb-3" style="width: 400px;">
+                <input id="email1" type="text" class="form-control" aria-label="Text input with radio button" placeholder="Email">
+            </div>
+
+            <div class=" mb-3" style="width: 400px;">
+                <input id="cour1" type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Course">
+            </div>
+
+            <div class=" mb-3" style="width: 400px;">
+                <input id="feed1" type="text" class="form-control" aria-label="Text input with radio button"
+                    placeholder="Feedbacks">
+            </div>
+
+            <select name="" id="drop">
+                <option value="">0</option>
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+                <option value="">4</option>
+                <option value="">5</option>
+            </select>
+            <div class="m-1 ">
+            <button onclick="getData()" type="button" class="btn btn-warning  ">SUBMIT</button>
+            <button onclick="clearData()" type="button" class="btn btn-warning  ">RESET</button>
+            </div>
+             <h3 id="namespc"></h3>
+                <h3 id="emailspc"></h3>
+                <h3 id="courcespc"></h3>
+                <h3 id="feedspc"></h3>
+        
+        </div>
+        
+               
+    </section>
+</body>
+<script src="index3.js"></script>
+
+</html>

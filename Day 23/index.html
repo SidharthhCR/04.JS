@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="head">Hello World</h1>
+    <h2 class="cl1">Hello </h2>
+    <h3 class="cl1">Hello</h3>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores quasi atque voluptatum id delectus ad soluta
+        velit, omnis impedit? Nam inventore obcaecati accusamus, corrupti libero laboriosam ipsa. Debitis iste quam est
+        mollitia nisi, expedita tenetur animi at ipsam error aliquam eaque nostrum rem sequi distinctio enim similique
+        ut quia reiciendis.</p>
+    
+    <input id="name" type="text" placeholder="Name">
+    <h2 id="val"></h2>
+
+    <button onclick="onBtnClick()">Click</button>
+
+</body>
+<script>
+    function onBtnClick() {
+        //console.log(document.querySelectorAll('#head,#h2,.cl1,p')).value
+
+        console.log(document.getElementById('name').value)
+        document.getElementById('val').innerHTML = document.getElementById('name').value
+
+        //  console.log(document.querySelector('#head'))
+        //     console.log(document.getElementById('head'))
+        //     console.log(document.getElementsByClassName('cl1'))
+        //     console.log(document.getElementsByTagName('p'))
+
+        //     // id
+        //     document.getElementById('head').innerHTML = 'WELCOME'
+        //     document.getElementById('head').style.backgroundColor = 'green'
+        //     document.getElementById('head').style.fontSize = '50px'
+
+        //     //class 
+        //     document.getElementsByClassName('cl1')[0].innerHTML = 'WELCOME 2'
+
+        //     //tags
+        //     document.getElementsByTagName('p')[0].innerHTML = 'halooooooooo'
+        //  document.getElementsByTagName('p')[0].style.display='none'
+
+    };
+</script>
+
+</html>

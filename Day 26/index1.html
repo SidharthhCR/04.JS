@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Haiii</h1>
+
+</body>
+<script>
+    let freeObj=new XMLHttpRequest();
+    freeObj.open('get','https://dummyjson.com/recipes')
+    freeObj.send()
+    freeObj.onreadystatechange=()=>{
+        if(freeObj.readyState==4 && freeObj.status==200){
+            let apiResponse=freeObj.response
+            apiResponse=JSON.parse(apiResponse)
+            console.log(apiResponse)
+        }
+    }
+</script>
+</html>
